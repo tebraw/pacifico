@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pacifico - Luxury Villa & Activities</title>
-    <link rel="stylesheet" href="css/luxury-booking.css?v=19">
+    <link rel="stylesheet" href="css/luxury-booking.css?v=20">
 </head>
 <body>
     <!-- Header -->
@@ -252,41 +252,48 @@
                 <div class="booking-summary">
                     <h3>Your Booking</h3>
                     
-                    <div class="summary-section">
-                        <h4>Villa</h4>
-                        <div class="summary-item" id="summary-villa">
-                            <p class="empty-state">No villa selected</p>
-                        </div>
-                    </div>
+                    <div class="booking-summary-content">
+                        <!-- Left Side: Villa & Activities -->
+                        <div class="booking-summary-left">
+                            <div class="summary-section">
+                                <h4>Villa</h4>
+                                <div class="summary-item" id="summary-villa">
+                                    <p class="empty-state">No villa selected</p>
+                                </div>
+                            </div>
 
-                    <div class="summary-section">
-                        <h4>Activities <span id="activity-count">(0)</span></h4>
-                        <div class="summary-activities" id="summary-activities">
-                            <p class="empty-state">No activities added</p>
+                            <div class="summary-section">
+                                <h4>Activities <span id="activity-count">(0)</span></h4>
+                                <div class="summary-activities" id="summary-activities">
+                                    <p class="empty-state">No activities added</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Contact Form -->
-                    <div class="summary-section contact-form-section">
-                        <h4>Your Contact Information</h4>
-                        <form class="booking-contact-form" id="booking-form">
-                            <div class="form-group">
-                                <label for="contact-name">Full Name *</label>
-                                <input type="text" id="contact-name" name="name" required placeholder="John Doe">
+                        <!-- Right Side: Contact Form -->
+                        <div class="booking-summary-right">
+                            <div class="summary-section contact-form-section">
+                                <h4>Your Contact Information</h4>
+                                <form class="booking-contact-form" id="booking-form">
+                                    <div class="form-group">
+                                        <label for="contact-name">Full Name *</label>
+                                        <input type="text" id="contact-name" name="name" required placeholder="John Doe">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-email">Email *</label>
+                                        <input type="email" id="contact-email" name="email" required placeholder="john@example.com">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-phone">Phone</label>
+                                        <input type="tel" id="contact-phone" name="phone" placeholder="+1 234 567 8900">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-message">Special Requests</label>
+                                        <textarea id="contact-message" name="message" rows="3" placeholder="Any special requirements or questions?"></textarea>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="form-group">
-                                <label for="contact-email">Email *</label>
-                                <input type="email" id="contact-email" name="email" required placeholder="john@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="contact-phone">Phone</label>
-                                <input type="tel" id="contact-phone" name="phone" placeholder="+1 234 567 8900">
-                            </div>
-                            <div class="form-group">
-                                <label for="contact-message">Special Requests</label>
-                                <textarea id="contact-message" name="message" rows="3" placeholder="Any special requirements or questions?"></textarea>
-                            </div>
-                        </form>
+                        </div>
                     </div>
 
                     <button class="proceed-btn" id="submit-inquiry-btn">Request Booking</button>
