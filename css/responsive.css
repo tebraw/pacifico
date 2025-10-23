@@ -1,0 +1,551 @@
+/* Responsive CSS - Mobile and Tablet Optimizations */
+
+/* Mobile-first responsive breakpoints */
+@media (max-width: 767px) {
+    /* Base adjustments */
+    .container {
+        padding: 0 var(--space-4);
+    }
+    
+    .activities-selection .container {
+        padding: 0 var(--space-3);
+    }
+    
+    /* Typography scaling */
+    h1 { font-size: var(--font-size-3xl); }
+    h2 { font-size: var(--font-size-2xl); }
+    h3 { font-size: var(--font-size-xl); }
+    
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    /* Navigation */
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        box-shadow: var(--shadow-lg);
+        flex-direction: column;
+        padding: var(--space-6);
+        gap: var(--space-4);
+        transform: translateY(-100%);
+        transition: transform var(--transition-base);
+        z-index: var(--z-dropdown);
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Hero section */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-16) 0;
+        min-height: 60vh;
+    }
+    
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: var(--space-8);
+    }
+    
+    .hero-actions {
+        justify-content: center;
+    }
+    
+    .hero-placeholder {
+        height: 250px;
+    }
+    
+    /* Grids */
+    .villas-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    /* Activity grid handled in components.css */
+    
+    /* Smaller activity cards for mobile */
+    .activity-card {
+        max-width: 100%;
+    }
+    
+    .activity-image {
+        height: 150px;
+    }
+    
+    .activity-info {
+        padding: var(--space-3);
+    }
+    
+    .activity-info h3 {
+        font-size: var(--font-size-base);
+    }
+    
+    .activity-price .price {
+        font-size: var(--font-size-lg);
+    }
+    
+    /* Cards */
+    .villa-card,
+    .activity-card {
+        margin: 0 var(--space-2);
+    }
+    
+    /* Villa detail */
+    .villa-detail-card {
+        margin: 0 var(--space-4) var(--space-12);
+        border-radius: var(--radius-xl);
+    }
+    
+    .main-image {
+        height: 250px;
+    }
+    
+    .image-gallery {
+        flex-wrap: wrap;
+    }
+    
+    .gallery-thumb {
+        min-width: calc(50% - var(--space-1));
+        height: 60px;
+    }
+    
+    .villa-details {
+        padding: var(--space-6);
+    }
+    
+    .villa-meta {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+    
+    .amenities-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .villa-actions {
+        flex-direction: column;
+    }
+    
+    /* Activity filters */
+    .activities-filter {
+        gap: var(--space-2);
+        margin-bottom: var(--space-8);
+    }
+    
+    .filter-btn {
+        padding: var(--space-2) var(--space-4);
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Sidebars */
+    .booking-sidebar,
+    .activity-cart {
+        width: 100%;
+        top: 80px;
+        height: calc(100vh - 80px);
+    }
+    
+    .cart-header {
+        position: sticky;
+        top: 0;
+        background: var(--white);
+        z-index: var(--z-sticky);
+        padding-bottom: var(--space-4);
+        margin-bottom: var(--space-4);
+    }
+    
+    /* Booking summary */
+    .booking-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .booking-section {
+        padding: var(--space-6);
+        margin: 0 var(--space-4);
+        border-radius: var(--radius-xl);
+    }
+    
+    /* Forms */
+    .guest-form {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .payment-options {
+        gap: var(--space-3);
+    }
+    
+    .payment-option label {
+        padding: var(--space-3);
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Final booking */
+    .booking-final {
+        margin: 0 var(--space-4);
+        padding: var(--space-6);
+    }
+    
+    .booking-actions {
+        flex-direction: column;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        text-align: center;
+    }
+    
+    /* Modals */
+    .modal-content {
+        width: 95%;
+        margin: var(--space-4);
+        border-radius: var(--radius-xl);
+    }
+    
+    .modal-header,
+    .modal-body,
+    .modal-actions {
+        padding: var(--space-6);
+    }
+    
+    /* Button adjustments */
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .hero-actions .btn {
+        width: auto;
+        min-width: 150px;
+    }
+    
+    /* Spacing adjustments */
+    .villas-preview,
+    .activities-preview,
+    .villas-detailed,
+    .activities-selection,
+    .booking-summary {
+        padding: var(--space-12) 0;
+    }
+    
+    .booking-cta {
+        padding: var(--space-12) 0;
+    }
+    
+    .page-header {
+        padding: var(--space-12) 0 var(--space-8);
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 0 var(--space-5);
+    }
+    
+    .activities-selection .container {
+        padding: 0 var(--space-6);
+    }
+    
+    /* Grids */
+    .villas-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    /* Activity grid handled in components.css */
+    
+    /* Activity cards for tablet */
+    .activity-card {
+        max-width: 100%;
+    }
+    
+    .activity-image {
+        height: 160px;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: var(--space-20) 0;
+    }
+    
+    .hero-content {
+        padding-right: var(--space-8);
+    }
+    
+    /* Villa details */
+    .villa-detail-card {
+        margin-bottom: var(--space-12);
+    }
+    
+    .villa-meta {
+        flex-wrap: wrap;
+    }
+    
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Sidebars */
+    .booking-sidebar,
+    .activity-cart {
+        width: 400px;
+    }
+    
+    /* Booking */
+    .booking-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .guest-form {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Forms */
+    .form-row {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* Large desktop adjustments */
+@media (min-width: 1024px) {
+    /* Sidebar positioning */
+    .booking-sidebar.active,
+    .activity-cart.active {
+        position: relative;
+        transform: none;
+        height: auto;
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-2xl);
+    }
+    
+    /* Two-column layout for villa page */
+    .villas-detailed .container {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: var(--space-8);
+        align-items: start;
+    }
+    
+    .villa-detail-card {
+        margin-bottom: var(--space-8);
+    }
+    
+    /* Activities page with sidebar */
+    .activities-selection .container {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: var(--space-8);
+        align-items: start;
+    }
+    
+    .activity-cart {
+        position: sticky;
+        top: 100px;
+        height: calc(100vh - 120px);
+        transform: none;
+        border-radius: var(--radius-2xl);
+        border: 1px solid var(--gray-200);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    /* Booking page layout */
+    .booking-summary .container {
+        max-width: 1400px;
+    }
+    
+    .booking-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-10);
+    }
+    
+    .booking-final {
+        grid-column: 1 / -1;
+    }
+}
+
+/* High-resolution displays */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .activities-selection .container {
+        max-width: none;
+        padding: 0 var(--space-12);
+    }
+    
+    /* Activity grid handled in components.css */
+    
+    .villas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Ultra-wide displays */
+@media (min-width: 1600px) {
+    .activities-selection .container {
+        padding: 0 var(--space-16);
+    }
+    
+    /* Activity grid handled in components.css */
+    
+    .amenities-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn:hover {
+        transform: none;
+    }
+    
+    .villa-card:hover,
+    .activity-card:hover {
+        transform: none;
+    }
+    
+    .gallery-thumb:hover {
+        transform: none;
+    }
+    
+    /* Larger touch targets */
+    .btn {
+        min-height: 48px;
+        padding: var(--space-4) var(--space-6);
+    }
+    
+    .cart-toggle {
+        min-height: 48px;
+        min-width: 48px;
+    }
+    
+    .nav-toggle {
+        min-height: 48px;
+        min-width: 48px;
+        padding: var(--space-3);
+    }
+    
+    .filter-btn {
+        min-height: 44px;
+        padding: var(--space-3) var(--space-6);
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .nav,
+    .booking-sidebar,
+    .activity-cart,
+    .cart-toggle,
+    .btn,
+    .modal {
+        display: none !important;
+    }
+    
+    main {
+        margin-top: 0;
+    }
+    
+    .hero {
+        background: none;
+        color: var(--gray-900);
+    }
+    
+    .page-header {
+        border-bottom: 2px solid var(--gray-900);
+    }
+    
+    .villa-card,
+    .activity-card,
+    .booking-section {
+        box-shadow: none;
+        border: 1px solid var(--gray-300);
+        break-inside: avoid;
+    }
+    
+    .placeholder-image {
+        border: 1px solid var(--gray-300);
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .btn::before {
+        display: none;
+    }
+    
+    .placeholder-image::before {
+        animation: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        --shadow-luxury: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    
+    .btn-outline {
+        border-width: 3px;
+    }
+    
+    .villa-card,
+    .activity-card,
+    .booking-section {
+        border-width: 2px;
+    }
+}

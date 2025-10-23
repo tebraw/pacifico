@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Summary - Pacifico</title>
+    <meta name="description" content="Review your booking and complete your reservation">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1 class="logo"><a href="index.html">Pacifico</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="villas.html">Villas</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Booking Summary</h1>
+                <p>Review your selection and complete your booking</p>
+            </div>
+        </section>
+
+        <section class="booking-summary">
+            <div class="container">
+                <div class="booking-grid">
+                    <!-- Villa Summary -->
+                    <div class="booking-section">
+                        <h2>Your Villa</h2>
+                        <div id="villa-summary" class="summary-card">
+                            <div class="villa-info">
+                                <h3 id="selected-villa-name">No villa selected</h3>
+                                <div class="villa-details">
+                                    <span id="villa-capacity"></span>
+                                    <span id="villa-dates"></span>
+                                    <span id="villa-guests"></span>
+                                </div>
+                            </div>
+                            <div class="villa-price">
+                                <span id="villa-total-price">€0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Activities Summary -->
+                    <div class="booking-section">
+                        <h2>Your Activities</h2>
+                        <div id="activities-summary" class="activities-list">
+                            <p class="no-activities">No activities selected</p>
+                        </div>
+                        <div class="activities-total">
+                            <span>Activities Total: </span>
+                            <span id="activities-total-price">€0</span>
+                        </div>
+                    </div>
+
+                    <!-- Guest Information -->
+                    <div class="booking-section">
+                        <h2>Contact Information</h2>
+                        <form id="guest-form" class="guest-form">
+                            <div class="form-group">
+                                <label for="first-name">First Name *</label>
+                                <input type="text" id="first-name" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="last-name">Last Name *</label>
+                                <input type="text" id="last-name" name="lastName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="country">Country *</label>
+                                <select id="country" name="country" required>
+                                    <option value="">Choose your country</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="AT">Austria</option>
+                                    <option value="CH">Switzerland</option>
+                                    <option value="US">USA</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="FR">France</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="NL">Netherlands</option>
+                                    <option value="OTHER">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="special-requests">Special Requests</label>
+                                <textarea id="special-requests" name="specialRequests" rows="4" placeholder="Let us know any special requests or requirements..."></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Payment Information -->
+                    <div class="booking-section">
+                        <h2>Payment Information</h2>
+                        <div class="payment-options">
+                            <div class="payment-option">
+                                <input type="radio" id="credit-card" name="payment" value="credit-card" checked>
+                                <label for="credit-card">
+                                    <span class="payment-icon">💳</span>
+                                    Credit Card
+                                </label>
+                            </div>
+                            
+                            <div class="payment-option">
+                                <input type="radio" id="bank-transfer" name="payment" value="bank-transfer">
+                                <label for="bank-transfer">
+                                    <span class="payment-icon">🏦</span>
+                                    Bank Transfer
+                                </label>
+                            </div>
+                            
+                            <div class="payment-option">
+                                <input type="radio" id="paypal" name="payment" value="paypal">
+                                <label for="paypal">
+                                    <span class="payment-icon">💰</span>
+                                    PayPal
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div id="credit-card-form" class="payment-form">
+                            <div class="form-group">
+                                <label for="card-number">Card Number *</label>
+                                <input type="text" id="card-number" name="cardNumber" placeholder="1234 5678 9012 3456">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry">Expiry Date *</label>
+                                    <input type="text" id="expiry" name="expiry" placeholder="MM/YY">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cvv">CVV *</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="card-name">Name on Card *</label>
+                                <input type="text" id="card-name" name="cardName">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total and Booking -->
+                <div class="booking-final">
+                    <div class="final-total">
+                        <div class="total-breakdown">
+                            <div class="total-line">
+                                <span>Villa:</span>
+                                <span id="final-villa-total">€0</span>
+                            </div>
+                            <div class="total-line">
+                                <span>Activities:</span>
+                                <span id="final-activities-total">€0</span>
+                            </div>
+                            <div class="total-line">
+                                <span>Taxes & Fees:</span>
+                                <span id="taxes-fees">€0</span>
+                            </div>
+                            <div class="total-line grand-total">
+                                <span>Grand Total:</span>
+                                <span id="final-grand-total">€0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-terms">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="terms-accepted" required>
+                            <span class="checkmark"></span>
+                            I accept the <a href="#" target="_blank">Terms and Conditions</a> and <a href="#" target="_blank">Privacy Policy</a>
+                        </label>
+                    </div>
+                    
+                    <div class="booking-actions">
+                        <button type="button" class="btn btn-outline" onclick="history.back()">Back</button>
+                        <button type="submit" id="complete-booking" class="btn btn-primary btn-large" disabled>
+                            Complete Booking
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Confirmation Modal -->
+        <div id="confirmation-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Booking Successful!</h2>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="confirmation-icon">✅</div>
+                    <p>Thank you for your booking! A confirmation has been sent to your email address.</p>
+                    <div class="booking-reference">
+                        <strong>Booking Reference: <span id="booking-reference">PAC-2025-001</span></strong>
+                    </div>
+                    <p>We will contact you within 24 hours to discuss the details.</p>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" onclick="window.location.href='index.html'">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pacifico</h3>
+                    <p>Luxury villas and unforgettable experiences for your perfect vacation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="villas.html">Villas</a></li>
+                        <li><a href="activities.html">Activities</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>info@pacifico-villas.com</p>
+                    <p>+49 123 456 7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pacifico. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

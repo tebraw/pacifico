@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities - Pacifico</title>
+    <meta name="description" content="Choose from our exclusive activities and create your perfect vacation package">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/activities-new.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1 class="logo"><a href="index.html">Pacifico</a></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="villas.html">Villas</a></li>
+                <li><a href="activities-new.html" class="active">Activities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="header-content">
+                <h1>Exclusive Activities</h1>
+                <p>Drag activities to your cart for the perfect vacation experience</p>
+            </div>
+        </section>
+
+        <section class="activities-section">
+            <div class="activities-container">
+                <div class="activities-filter">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="adventure">Adventure</button>
+                    <button class="filter-btn" data-category="wellness">Wellness</button>
+                    <button class="filter-btn" data-category="water">Water</button>
+                    <button class="filter-btn" data-category="culture">Culture</button>
+                </div>
+
+                <div class="activities-grid" id="activities-grid">
+                    <!-- ATV Tour -->
+                    <div class="activity-card" data-category="adventure">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="ATV Adventure Tour">
+                        </div>
+                        <div class="card-content">
+                            <h3>ATV Adventure Tour</h3>
+                            <p>Explore hidden trails and spectacular viewpoints on our guided ATV tour through the mountains.</p>
+                            <div class="card-details">
+                                <span>⏱️ 3 hours</span>
+                                <span>🏔️ Moderate</span>
+                                <span>👥 2-8 people</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">€120</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zip Line -->
+                    <div class="activity-card" data-category="adventure">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Zip Line">
+                        </div>
+                        <div class="card-content">
+                            <h3>Canopy Zip Line</h3>
+                            <p>Soar through the treetops and experience nature from a bird's eye view.</p>
+                            <div class="card-details">
+                                <span>⏱️ 2 hours</span>
+                                <span>🏔️ Easy</span>
+                                <span>👥 1-12 people</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">€85</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Yoga -->
+                    <div class="activity-card" data-category="wellness">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Private Yoga Session">
+                        </div>
+                        <div class="card-content">
+                            <h3>Private Yoga Session</h3>
+                            <p>Relaxation and mindfulness with professional yoga instructors at your villa or beach.</p>
+                            <div class="card-details">
+                                <span>⏱️ 1.5 hours</span>
+                                <span>🧘‍♀️ All levels</span>
+                                <span>👥 1-15 people</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">€80</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Massage -->
+                    <div class="activity-card" data-category="wellness">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Wellness Massage">
+                        </div>
+                        <div class="card-content">
+                            <h3>Wellness Massage</h3>
+                            <p>Relaxing massages directly in your villa by certified therapists.</p>
+                            <div class="card-details">
+                                <span>⏱️ 1 hour</span>
+                                <span>💆‍♀️ Relaxation</span>
+                                <span>👥 1-2 people</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">€150</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meditation -->
+                    <div class="activity-card" data-category="wellness">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Guided Meditation">
+                        </div>
+                        <div class="card-content">
+                            <h3>Guided Meditation</h3>
+                            <p>Guided meditation in natural surroundings for inner peace and clarity.</p>
+                            <div class="card-details">
+                                <span>⏱️ 1 hour</span>
+                                <span>🧘‍♂️ All levels</span>
+                                <span>👥 1-20 people</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">€60</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Catamaran -->
+                    <div class="activity-card" data-category="water">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Catamaran Sunset Tour">
+                        </div>
+                        <div class="card-content">
+                            <h3>Catamaran Sunset Tour</h3>
+                            <p>Luxurious boat tour at sunset with gourmet dinner and open bar.</p>
+                            <div class="card-details">
+                                <span>⏱️ 4 hours</span>
+                                <span>🌊 Relaxing</span>
+                                <span>👥 2-30 people</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">€200</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Snorkeling -->
+                    <div class="activity-card" data-category="water">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Snorkeling Expedition">
+                        </div>
+                        <div class="card-content">
+                            <h3>Snorkeling Expedition</h3>
+                            <p>Discover the colorful underwater world at the best snorkeling spots in the region.</p>
+                            <div class="card-details">
+                                <span>⏱️ 3 hours</span>
+                                <span>🏊‍♀️ Easy</span>
+                                <span>👥 2-12 people</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">€95</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cooking Class -->
+                    <div class="activity-card" data-category="culture">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Local Cooking Class">
+                        </div>
+                        <div class="card-content">
+                            <h3>Local Cooking Class</h3>
+                            <p>Learn to cook traditional dishes from local chefs in your villa.</p>
+                            <div class="card-details">
+                                <span>⏱️ 3 hours</span>
+                                <span>👨‍🍳 All levels</span>
+                                <span>👥 4-16 people</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">€120</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Village Tour -->
+                    <div class="activity-card" data-category="culture">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Cultural Village Tour">
+                        </div>
+                        <div class="card-content">
+                            <h3>Cultural Village Tour</h3>
+                            <p>Authentic insights into local life and traditions of the region.</p>
+                            <div class="card-details">
+                                <span>⏱️ 4 hours</span>
+                                <span>🚶‍♀️ Easy</span>
+                                <span>👥 2-20 people</span>
+                            </div>
+                            <div class="card-price">
+                                <span class="price">€75</span>
+                                <span class="per-person">per person</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pacifico</h3>
+                    <p>Luxury villas and unforgettable experiences for your perfect vacation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="villas.html">Villas</a></li>
+                        <li><a href="activities-new.html">Activities</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>info@pacifico-villas.com</p>
+                    <p>+49 123 456 7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pacifico. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
