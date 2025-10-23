@@ -3,194 +3,371 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacifico - Luxury Villas & Experiences</title>
-    <meta name="description" content="Luxurious villas for up to 30 guests with exclusive activities like ATV tours, yoga sessions, and catamaran excursions">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <title>Pacifico - Luxury Villa & Activities</title>
+    <link rel="stylesheet" href="css/luxury-booking.css?v=18">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <h1 class="logo">Pacifico</h1>
+    <!-- Header -->
+    <header class="luxury-header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>PACIFICO</h1>
+                <p>Luxury Villa Experiences</p>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="villas.html">Villas</a></li>
-                <li><a href="activities.html">Activities</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+            <nav class="main-nav">
+                <a href="#date-guests">Dates</a>
+                <a href="#villas">Villas</a>
+                <a href="#shuttle">Shuttle</a>
+                <a href="#activities">Activities</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Luxurious Villas with Unforgettable Experiences</h1>
-                <p class="hero-subtitle">Discover our exclusive villas for up to 30 guests and book unique activities for your perfect vacation</p>
-                <div class="hero-actions">
-                    <a href="villas.html" class="btn btn-primary">Discover Villas</a>
-                    <a href="activities.html" class="btn btn-secondary">View Activities</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                     alt="Luxury Villa with Ocean View" 
-                     class="hero-villa-image"
-                     loading="lazy">
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="images/header-video.mov" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Create Your Perfect Vacation</h1>
+            <p>Choose Your Villa • Select Activities • Live the Dream</p>
+        </div>
+    </section>
 
-        <!-- Villen Übersicht -->
-        <section class="villas-preview">
-            <div class="container">
-                <h2 class="section-title">Our Luxury Villas</h2>
-                <div class="villas-grid">
-                    <div class="villa-card">
-                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                             alt="Villa Pacifica - Luxury Ocean View Villa" 
-                             class="villa-image"
-                             loading="lazy">
+    <!-- Main Booking Interface -->
+    <main class="booking-interface">
+        <div class="booking-container">
+            
+            <!-- Left: Villa and Activities Selection -->
+            <div class="selection-area">
+                
+                <!-- Step 0: Date & Guests Selection -->
+                <section class="booking-section date-guests-section" id="date-guests">
+                    <div class="section-header">
+                        <span class="step-number">00</span>
+                        <div class="section-title">
+                            <h2>When & Who</h2>
+                            <p>Select your travel dates and number of guests</p>
+                        </div>
+                    </div>
+
+                    <div class="date-guests-grid">
+                        <!-- Check-in Date -->
+                        <div class="input-group">
+                            <label for="checkin-date">Check-in</label>
+                            <input type="date" id="checkin-date" class="date-input">
+                        </div>
+
+                        <!-- Check-out Date -->
+                        <div class="input-group">
+                            <label for="checkout-date">Check-out</label>
+                            <input type="date" id="checkout-date" class="date-input">
+                        </div>
+
+                        <!-- Number of Guests -->
+                        <div class="input-group">
+                            <label for="num-guests">Guests</label>
+                            <div class="guests-selector">
+                                <button class="guests-btn minus" id="guests-minus">−</button>
+                                <input type="number" id="num-guests" class="guests-input" value="2" min="1" max="30" readonly>
+                                <button class="guests-btn plus" id="guests-plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Step 1: Villa Selection -->
+                <section class="booking-section villa-section" id="villas">
+                    <div class="section-header">
+                        <span class="step-number">01</span>
+                        <div class="section-title">
+                            <h2>Choose Your Villa</h2>
+                            <p>Select your luxury accommodation for up to 30 guests</p>
+                        </div>
+                    </div>
+
+                    <div class="villa-cards">
+                    <!-- Villa Pacifica -->
+                    <div class="villa-card" data-villa="pacifica">
+                        <div class="villa-image">
+                            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Villa Pacifica">
+                            <div class="villa-badge">Ocean Front</div>
+                        </div>
                         <div class="villa-info">
                             <h3>Villa Pacifica</h3>
-                            <p class="villa-capacity">Up to 16 guests</p>
-                            <p class="villa-description">Modern luxury villa with ocean views, private pool and direct beach access.</p>
-                            <div class="villa-features">
-                                <span class="feature">🏊‍♂️ Private Pool</span>
-                                <span class="feature">🏖️ Beach Access</span>
-                                <span class="feature">🍽️ Full Kitchen</span>
+                            <div class="villa-specs">
+                                <span>👥 Up to 16 guests</span>
+                                <span>🛏️ 8 bedrooms</span>
+                                <span>🚿 6 bathrooms</span>
                             </div>
-                            <a href="villas.html#villa-pacifica" class="btn btn-outline">View Details</a>
+                            <div class="villa-highlights">
+                                <span>Infinity Pool</span>
+                                <span>Beach Access</span>
+                                <span>Ocean View</span>
+                            </div>
+                            <div class="villa-action">
+                                <button class="villa-read-more-btn" data-villa="pacifica">Read More</button>
+                                <button class="select-btn">Select Villa</button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="villa-card">
-                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                             alt="Villa Serenidad - Tropical Garden Villa" 
-                             class="villa-image"
-                             loading="lazy">
+                    <!-- Villa Serenidad -->
+                    <div class="villa-card" data-villa="serenidad">
+                        <div class="villa-image">
+                            <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Villa Serenidad">
+                            <div class="villa-badge">Wellness Retreat</div>
+                        </div>
                         <div class="villa-info">
                             <h3>Villa Serenidad</h3>
-                            <p class="villa-capacity">Up to 14 guests</p>
-                            <p class="villa-description">Tranquil villa with tropical garden and dedicated wellness area.</p>
-                            <div class="villa-features">
-                                <span class="feature">🧘‍♀️ Yoga Area</span>
-                                <span class="feature">🌿 Tropical Garden</span>
-                                <span class="feature">💆‍♀️ Spa Area</span>
+                            <div class="villa-specs">
+                                <span>👥 Up to 14 guests</span>
+                                <span>🛏️ 7 bedrooms</span>
+                                <span>🚿 5 bathrooms</span>
                             </div>
-                            <a href="villas.html#villa-serenidad" class="btn btn-outline">View Details</a>
+                            <div class="villa-highlights">
+                                <span>Private Spa</span>
+                                <span>Yoga Pavilion</span>
+                                <span>Garden</span>
+                            </div>
+                            <div class="villa-action">
+                                <button class="villa-read-more-btn" data-villa="serenidad">Read More</button>
+                                <button class="select-btn">Select Villa</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Book Both Villas Option -->
+                <div class="book-both-container">
+                    <div class="book-both-divider">
+                        <span class="divider-line"></span>
+                        <button class="book-both-btn" id="book-both-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                            <span>Book Both Villas Together</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9 22 9 12 15 12 15 22"/>
+                            </svg>
+                        </button>
+                        <span class="divider-line"></span>
+                    </div>
+                    <p class="book-both-subtitle">Perfect for large groups up to 30 guests • The villas are side by side</p>
+                </div>
+                
+                </section>
+
+                <!-- Step 1.5: Airport Shuttle -->
+                <section class="booking-section shuttle-section" id="shuttle">
+                    <div class="section-header">
+                        <span class="step-number">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 17h14v2H5v-2zm7-14l7 7h-4v6h-6v-6H5l7-7z"/>
+                            </svg>
+                        </span>
+                        <div class="section-title">
+                            <h2>Airport Shuttle</h2>
+                            <p>Add convenient airport transfer service</p>
+                        </div>
+                    </div>
+
+                    <div class="shuttle-card" id="shuttle-card">
+                        <div class="shuttle-image">
+                            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Airport Shuttle">
+                        </div>
+                        <div class="shuttle-content">
+                            <div class="shuttle-header">
+                                <h3>Private Airport Transfer</h3>
+                                <p class="shuttle-description">Comfortable shuttle service from/to Liberia International Airport (LIR). Professional driver, air-conditioned vehicle, meet & greet service included.</p>
+                            </div>
+                            <div class="shuttle-options">
+                                <label class="shuttle-option">
+                                    <input type="checkbox" id="shuttle-oneway" value="oneway">
+                                    <span>One Way Transfer</span>
+                                </label>
+                                <label class="shuttle-option">
+                                    <input type="checkbox" id="shuttle-roundtrip" value="roundtrip">
+                                    <span>Round Trip Transfer</span>
+                                </label>
+                            </div>
+                            <div class="shuttle-footer">
+                                <button class="add-shuttle-btn" id="add-shuttle-btn">Add Airport Shuttle</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Step 2: Activities Selection -->
+                <section class="booking-section activities-section" id="activities">
+                    <div class="section-header">
+                        <span class="step-number">02</span>
+                        <div class="section-title">
+                            <h2>Add Your Activities</h2>
+                            <p>Click on activities to add them to your package</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity Cards Grid -->
+                    <div class="activities-grid" id="activities-grid">
+                        <!-- Activities will be populated by JavaScript -->
+                    </div>
+                </section>
+                
             </div>
-        </section>
-
-        <!-- Aktivitäten Vorschau -->
-        <section class="activities-preview">
-            <div class="container">
-                <h2 class="section-title">Exclusive Activities</h2>
-                <p class="section-subtitle">Create your dream vacation with our handpicked experiences</p>
-                <div class="activities-grid">
-                    <div class="activity-card">
-                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                             alt="ATV Adventure Tour" 
-                             class="activity-image"
-                             loading="lazy">
-                        <div class="activity-info">
-                            <h3>ATV Adventure Tour</h3>
-                            <p>Explore hidden trails and spectacular viewpoints</p>
-                            <span class="activity-price">from €120</span>
+            
+            <!-- Right: Selected Items (Fixed) -->
+            <aside class="booking-sidebar">
+                
+                <!-- Selected Villa Display -->
+                <div class="selected-villa-display" id="selected-villa-display" style="display: none;">
+                    <h4>✓ Selected Villa</h4>
+                    <div class="selected-villa-content">
+                        <div class="selected-villa-info">
+                            <span class="selected-villa-name" id="selected-villa-name"></span>
+                            <span class="selected-villa-guests" id="selected-villa-guests"></span>
                         </div>
-                    </div>
-
-                    <div class="activity-card">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                             alt="Private Yoga Session" 
-                             class="activity-image"
-                             loading="lazy">
-                        <div class="activity-info">
-                            <h3>Private Yoga Session</h3>
-                            <p>Relaxation and mindfulness with professional instructors</p>
-                            <span class="activity-price">from €80</span>
-                        </div>
-                    </div>
-
-                    <div class="activity-card">
-                        <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                             alt="Catamaran Sunset Tour" 
-                             class="activity-image"
-                             loading="lazy">
-                        <div class="activity-info">
-                            <h3>Catamaran Sunset Tour</h3>
-                            <p>Luxurious boat tour at sunset with dinner</p>
-                            <span class="activity-price">from €200</span>
-                        </div>
-                    </div>
-
-                    <div class="activity-card">
-                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                             alt="Wellness Massage" 
-                             class="activity-image"
-                             loading="lazy">
-                        <div class="activity-info">
-                            <h3>Wellness Massage</h3>
-                            <p>Relaxing massages in your private villa</p>
-                            <span class="activity-price">from €150</span>
-                        </div>
+                        <button class="change-btn">Change Villa</button>
                     </div>
                 </div>
-                <div class="activities-cta">
-                    <a href="activities.html" class="btn btn-primary">View All Activities</a>
-                </div>
-            </div>
-        </section>
 
-        <!-- Booking CTA -->
-        <section class="booking-cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Ready for Your Dream Vacation?</h2>
-                    <p>Book your villa now and create your personal activity package</p>
-                    <a href="villas.html" class="btn btn-primary btn-large">Book Now</a>
+                <!-- Selected Activities Display -->
+                <div class="selected-activities-section">
+                    <h4>Added Activities <span id="selected-count">(0)</span></h4>
+                    <div class="selected-activities-container" id="selected-activities-container">
+                        <p class="empty-state">No activities added yet</p>
+                    </div>
+                </div>
+                
+            </aside>
+        </div>
+        
+        <!-- Booking Summary - Bottom Center -->
+        <section class="booking-summary-section">
+            <div class="booking-summary-center">
+                <div class="booking-summary">
+                    <h3>Your Booking</h3>
+                    
+                    <div class="summary-section">
+                        <h4>Villa</h4>
+                        <div class="summary-item" id="summary-villa">
+                            <p class="empty-state">No villa selected</p>
+                        </div>
+                    </div>
+
+                    <div class="summary-section">
+                        <h4>Activities <span id="activity-count">(0)</span></h4>
+                        <div class="summary-activities" id="summary-activities">
+                            <p class="empty-state">No activities added</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="summary-section contact-form-section">
+                        <h4>Your Contact Information</h4>
+                        <form class="booking-contact-form" id="booking-form">
+                            <div class="form-group">
+                                <label for="contact-name">Full Name *</label>
+                                <input type="text" id="contact-name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email *</label>
+                                <input type="email" id="contact-email" name="email" required placeholder="john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone">Phone</label>
+                                <input type="tel" id="contact-phone" name="phone" placeholder="+1 234 567 8900">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Special Requests</label>
+                                <textarea id="contact-message" name="message" rows="3" placeholder="Any special requirements or questions?"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <button class="proceed-btn" id="submit-inquiry-btn">Request Booking</button>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
+    <!-- Villa Details Modal -->
+    <div class="modal" id="villa-modal">
+        <div class="modal-content villa-modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="villa-modal-title">Villa Details</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <div class="modal-body villa-modal-body">
+                <!-- Villa Image Gallery -->
+                <div class="villa-gallery" id="villa-gallery">
+                    <!-- Images will be populated by JavaScript -->
+                </div>
+                
+                <!-- Villa Details -->
+                <div class="villa-details" id="villa-details">
+                    <!-- Details will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Selection Modal -->
+    <div class="modal" id="activity-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select an Activity</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="activity-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="adventure">Adventure</button>
+                    <button class="category-btn" data-category="wellness">Wellness</button>
+                    <button class="category-btn" data-category="water">Water</button>
+                    <button class="category-btn" data-category="culture">Culture</button>
+                </div>
+
+                <div class="activities-list">
+                    <!-- Activities will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="luxury-footer">
+        <div class="footer-container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Pacifico</h3>
-                    <p>Luxurious villas and unforgettable experiences for your perfect vacation.</p>
+                <div class="footer-brand">
+                    <h3>PACIFICO</h3>
+                    <p>Creating unforgettable luxury vacation experiences</p>
                 </div>
-                <div class="footer-section">
-                    <h4>Links</h4>
-                    <ul>
-                        <li><a href="villas.html">Villas</a></li>
-                        <li><a href="activities.html">Activities</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>info@pacifico-villas.com</p>
-                    <p>+1 555 123 4567</p>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Explore</h4>
+                        <a href="#villas">Villas</a>
+                        <a href="#activities">Activities</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Contact</h4>
+                        <p>info@pacifico-villas.com</p>
+                        <p>+49 123 456 7890</p>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Pacifico. Alle Rechte vorbehalten.</p>
+                <p>&copy; 2025 Pacifico. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/luxury-booking.js?v=21"></script>
 </body>
 </html>
