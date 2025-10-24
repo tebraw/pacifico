@@ -104,18 +104,19 @@ const activities = [
 
 // Villa Data
 const villas = {
-    pacifica: {
-        name: "Villa Pacifica",
+    palacio: {
+        name: "Palacio Tropical",
         guests: "Up to 16 guests",
         pricePerNight: 1200,
-        description: "Villa Pacifica is a stunning oceanfront property featuring breathtaking views of the Pacific Ocean. This luxurious 8-bedroom villa offers the perfect blend of modern comfort and tropical elegance, ideal for large groups and families seeking an unforgettable Costa Rican experience.",
+        description: "Palacio Tropical is a stunning luxury estate featuring breathtaking views and world-class amenities. This luxurious 8-bedroom villa offers the perfect blend of modern comfort and tropical elegance, ideal for large groups and families seeking an unforgettable Costa Rican experience.",
         bedrooms: 8,
         bathrooms: 6,
         images: [
-            "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            "images/villas/Palacio Tropical/Slider5-1.jpg",
+            "images/villas/Palacio Tropical/ICON-Purple-Room-1.jpg",
+            "images/villas/Palacio Tropical/unnamed.jpg",
+            "images/villas/Palacio Tropical/unnamed (1).jpg",
+            "images/villas/Palacio Tropical/unnamed (2).jpg"
         ],
         amenities: [
             "Infinity Pool with Ocean View",
@@ -130,18 +131,18 @@ const villas = {
             "24/7 Concierge Service"
         ]
     },
-    serenidad: {
-        name: "Villa Serenidad",
+    residencia: {
+        name: "Residencia Pacifico",
         guests: "Up to 14 guests",
         pricePerNight: 1000,
-        description: "Villa Serenidad is a wellness-focused retreat nestled in lush tropical gardens. With its private spa, yoga pavilion, and serene atmosphere, this 7-bedroom villa is perfect for those seeking relaxation, rejuvenation, and connection with nature.",
+        description: "Residencia Pacifico is a wellness-focused retreat nestled in lush tropical gardens. With its private spa, yoga pavilion, and serene atmosphere, this 7-bedroom villa is perfect for those seeking relaxation, rejuvenation, and connection with nature.",
         bedrooms: 7,
         bathrooms: 5,
         images: [
-            "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            "https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            "images/villas/Residencia Pacifico/+Pacifica_DSC_4756 (1).jpg",
+            "images/villas/Residencia Pacifico/Pacifica_DSC_4188.JPG",
+            "images/villas/Residencia Pacifico/+Cuarto 3 DSC_3345.jpg",
+            "images/villas/Residencia Pacifico/unnamed.jpg"
         ],
         amenities: [
             "Private Spa & Massage Room",
@@ -879,7 +880,7 @@ function updateVillaSummary() {
         if (bookingState.selectedVilla === 'both') {
             // Both villas selected
             summaryVilla.innerHTML = `
-                <p class="summary-villa-name">Villa Pacifica + Villa Serenidad</p>
+                <p class="summary-villa-name">Palacio Tropical + Residencia Pacifico</p>
                 <p class="summary-villa-guests">Up to 30 guests (16+14)</p>
             `;
         } else {
