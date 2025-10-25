@@ -1830,6 +1830,187 @@ body {
 }
 
 /* ============================================
+   WELCOME GUIDE MODAL
+   ============================================ */
+.welcome-modal-content {
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.welcome-modal-body {
+    padding: 0;
+}
+
+.welcome-intro {
+    text-align: center;
+    padding: 0 32px 32px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-bottom: 3px solid var(--primary-gold);
+}
+
+.welcome-subtitle {
+    font-size: 20px;
+    color: var(--primary-gold);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.welcome-description {
+    font-size: 16px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.guide-steps {
+    padding: 32px;
+}
+
+.guide-step {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: #f8f9fa;
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--primary-gold);
+    transition: all var(--transition-fast);
+}
+
+.guide-step:hover {
+    background: #ffffff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transform: translateX(4px);
+}
+
+.guide-step:last-child {
+    margin-bottom: 0;
+}
+
+.step-icon {
+    position: relative;
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-gold), #d4a855);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+}
+
+.step-number {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 32px;
+    height: 32px;
+    background: var(--primary-dark);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    border: 3px solid white;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h4 {
+    font-size: 20px;
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.step-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.step-content strong {
+    color: var(--primary-dark);
+}
+
+.activity-details {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+}
+
+.activity-details li {
+    padding: 8px 0;
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.highlight-text {
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.1), rgba(201, 169, 97, 0.05));
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--primary-gold);
+    margin-top: 12px;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+.welcome-cta {
+    padding: 0 32px 32px;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, var(--primary-gold), #d4a855);
+    color: white;
+    padding: 32px;
+    border-radius: var(--radius-xl);
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(201, 169, 97, 0.3);
+}
+
+.cta-box h4 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.cta-box p {
+    font-size: 16px;
+    margin-bottom: 24px;
+    opacity: 0.95;
+}
+
+.welcome-start-btn {
+    background: white;
+    color: var(--primary-gold);
+    border: none;
+    padding: 16px 48px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.welcome-start-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+    background: #f8f9fa;
+}
+
+.welcome-start-btn:active {
+    transform: translateY(0);
+}
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 
@@ -2033,6 +2214,19 @@ body {
         margin: 20px;
         max-height: 90vh;
         overflow-y: auto;
+    }
+    
+    .welcome-modal-content {
+        max-width: 95%;
+    }
+    
+    .guide-step {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .step-icon {
+        margin: 0 auto;
     }
     
     .villa-modal-content {
@@ -2267,6 +2461,77 @@ body {
         margin: 10px;
         padding: 16px;
         border-radius: 12px;
+    }
+    
+    .welcome-modal-content {
+        max-width: 100%;
+        padding: 12px;
+    }
+    
+    .welcome-intro {
+        padding: 16px;
+    }
+    
+    .welcome-subtitle {
+        font-size: 18px;
+    }
+    
+    .welcome-description {
+        font-size: 14px;
+    }
+    
+    .guide-steps {
+        padding: 16px;
+    }
+    
+    .guide-step {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .step-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .step-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .step-number {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    
+    .step-content h4 {
+        font-size: 18px;
+    }
+    
+    .step-content p {
+        font-size: 14px;
+    }
+    
+    .welcome-cta {
+        padding: 16px;
+    }
+    
+    .cta-box {
+        padding: 20px;
+    }
+    
+    .cta-box h4 {
+        font-size: 20px;
+    }
+    
+    .cta-box p {
+        font-size: 14px;
+    }
+    
+    .welcome-start-btn {
+        padding: 14px 32px;
+        font-size: 16px;
     }
     
     .modal-header h3 {

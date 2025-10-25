@@ -189,7 +189,62 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize Book Both Villas Button
     initializeBookBothButton();
+    
+    // Initialize Welcome Modal
+    initializeWelcomeModal();
 });
+
+// ============================================
+// WELCOME MODAL INITIALIZATION
+// ============================================
+function initializeWelcomeModal() {
+    const welcomeModal = document.getElementById('welcome-modal');
+    const closeBtn = document.getElementById('close-welcome-modal');
+    const startBtn = document.getElementById('start-booking-btn');
+    
+    // Check if user has seen the welcome modal before
+    const hasSeenWelcome = localStorage.getItem('hasSeenWelcome');
+    
+    if (!hasSeenWelcome) {
+        // Show modal on first visit
+        setTimeout(() => {
+            welcomeModal.classList.add('active');
+        }, 500);
+    }
+    
+    // Close button
+    closeBtn.addEventListener('click', closeWelcomeModal);
+    
+    // Start button
+    startBtn.addEventListener('click', closeWelcomeModal);
+    
+    // Close on outside click
+    welcomeModal.addEventListener('click', (e) => {
+        if (e.target === welcomeModal) {
+            closeWelcomeModal();
+        }
+    });
+    
+    // Close on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && welcomeModal.classList.contains('active')) {
+            closeWelcomeModal();
+        }
+    });
+    
+    function closeWelcomeModal() {
+        welcomeModal.classList.remove('active');
+        localStorage.setItem('hasSeenWelcome', 'true');
+        
+        // Smooth scroll to villas section
+        setTimeout(() => {
+            document.getElementById('villas').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }, 300);
+    }
+}
 
 // ============================================
 // DATE & GUESTS INITIALIZATION
